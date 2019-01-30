@@ -26,8 +26,6 @@ public class ClientThread extends Thread {
             ChatServer.users.put(username, this.socket);
             ChatServer.broadcast(username + " has entered the chat");
             while ((input = in.readLine()) != null) {
-                if(input == "quit")
-                    break;
                 ChatServer.messages.put(username + ": " + input);
             }
             ChatServer.users.remove(username);
